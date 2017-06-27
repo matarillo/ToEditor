@@ -1,0 +1,15 @@
+<html>
+<head>
+<script type="text/javascript">
+  window.dialogWidth='7em';
+  window.dialogHeight='1em';
+  var element = external.menuArguments.event.srcElement;
+  var plugin = new ActiveXObject('Matarillo.ToEditor');
+  window.onbeforeunload = function() {plugin.Close();}
+  plugin.OnTextChanged = function(text) {element.innerText = text;};
+  plugin.OnExited = function() {window.close();};
+  plugin.Edit(element.innerText);
+</script>
+</head>
+<body>Editing...</body>
+</html>
